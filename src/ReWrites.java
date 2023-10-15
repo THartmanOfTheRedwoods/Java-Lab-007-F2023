@@ -6,12 +6,12 @@ class ReWrites {
     public static void avgRewrite() {
         String l;
         double sum = 0.0;
-        int count = 0;
+        int count = 1;
         System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+        for (int i = count; (!(l = s.nextLine()).equalsIgnoreCase("Q")); i++) {
             try {
                 sum += Integer.parseInt(l);
-                count++;
+                count = i;
             } catch (NumberFormatException nfe) {}
         }
 
@@ -23,11 +23,8 @@ class ReWrites {
         int x = -1;
         int sum = 0;
 
-        while (true) {
+        while (!(x == 0)) {
             try {
-                if(x == 0) {
-                    break;
-                }
                 x = Integer.parseInt(in.nextLine());
                 if (x <= 0) {
                     continue;
@@ -43,5 +40,6 @@ class ReWrites {
     public static void main(String[] args) {
         avgRewrite();
         sumRewrite();
+
     }
 }
