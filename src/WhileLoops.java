@@ -1,3 +1,9 @@
+/* Java Lab 007
+ * Finn Clark
+ * 10/14/23
+ * CIS - 12
+ * Hartman*/
+
 import java.util.Scanner;
 
 public class WhileLoops {
@@ -9,7 +15,7 @@ public class WhileLoops {
         String in = s.nextLine();
         int e = 0;
         int o = 0;
-        while (!in.equals("Q")) {
+        while (!in.toUpperCase().equals("Q")) {
             int num = Integer.parseInt(in);
             if (num % 2 == 0) {
                 e++;
