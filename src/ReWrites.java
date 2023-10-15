@@ -4,13 +4,14 @@ class ReWrites {
     private final static Scanner s = new Scanner(System.in);
 
     public static void avgRewrite() {
-        String l;
+        Scanner s = new Scanner(System.in);
+        String input;
         double sum = 0.0;
         int count = 0;
         System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+        for (input = s.nextLine(); !input.toUpperCase().equals("Q"); input = s.nextLine())  {
             try {
-                sum += Integer.parseInt(l);
+                sum += Integer.parseInt(input);
                 count++;
             } catch (NumberFormatException nfe) {}
         }
@@ -23,11 +24,8 @@ class ReWrites {
         int x = -1;
         int sum = 0;
 
-        while (true) {
+        while (x != 0) {
             try {
-                if(x == 0) {
-                    break;
-                }
                 x = Integer.parseInt(in.nextLine());
                 if (x <= 0) {
                     continue;
