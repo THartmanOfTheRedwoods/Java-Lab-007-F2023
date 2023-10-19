@@ -5,20 +5,33 @@ public class WhileLoops {
     private final static Scanner s = new Scanner(System.in);
     private static int loopCounter = 0;
 
-    public static void eoCount(int eoSum) {
-        while (eoSum > 0) {
-            if (eoSum % 2 == 0) {
-                loopCounter++;
-                System.out.println(eoSum);  //change to an ArrayList
-                eoSum -= 2;
-            } else {
-                loopCounter++;
-                System.out.println(eoSum);  //change to an ArrayList
-                eoSum -= 2;
+
+    public static void eoCount(int eoValue) {
+        ArrayList<Integer> eoArray = new ArrayList();
+        int eoSum = 0;
+        if (eoValue % 2 == 0) {
+            while (eoValue > 0) {
+                eoArray.add(eoValue);
+                eoValue -= 2;
             }
+
+            for (int evenValue: eoArray) {
+                eoSum += evenValue;
+            }
+
+            System.out.println(eoSum);
+        } else {
+            while (eoValue > 0) {
+                eoArray.add(eoValue);
+                eoValue -= 2;
+            }
+
+            for (int evenValue: eoArray) {
+                eoSum += evenValue;
+            }
+
+            System.out.println(eoSum);
         }
-        System.out.println("Number of Loops: " + loopCounter);
-        loopCounter = 0;
     }
 
     public static void mean() {
