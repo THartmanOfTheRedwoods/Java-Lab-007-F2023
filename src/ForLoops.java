@@ -4,6 +4,10 @@ public class ForLoops {
     private final static Scanner s = new Scanner(System.in);
     private static int resultTotal = 0;
 
+    /**
+     * Prompts user for an int value, adds all int values up to user's int value, then prints sum to terminal
+     * @author Atticus Blanco
+     */
     public static void forSum() {
         System.out.print("Number? ");
         int userInt = Integer.parseInt(s.nextLine());
@@ -15,6 +19,10 @@ public class ForLoops {
         System.out.println("The sum is " + resultTotal);
     }
 
+    /**
+     * Takes two user int values, adds all values between them inclusively, then prints sum to terminal
+     * @author Atticus Blanco
+     */
     public static void rangeSum() {
         resultTotal = 0;
 
@@ -33,6 +41,10 @@ public class ForLoops {
         System.out.println("The sum is: " + resultTotal);
     }
 
+    /**
+     * Takes a user int value, calculates the factorial, then prints product to terminal
+     * @author Atticus Blanco
+     */
     public static void factorial() {
         resultTotal = 1;
 
@@ -46,6 +58,10 @@ public class ForLoops {
         System.out.println("Factorial: " + resultTotal);
     }
 
+    /**
+     * Initiates forSum method, rangeSum method, and factorial method
+     * @author Atticus Blanco
+     */
     public static void main(String[] args) {
         forSum();
         rangeSum();

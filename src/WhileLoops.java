@@ -4,13 +4,21 @@ import java.util.ArrayList;
 public class WhileLoops {
     private final static Scanner s = new Scanner(System.in);
 
-    public static void eoCount(int eoValue) {
-        ArrayList<Integer> eoArray = new ArrayList();
+    /**
+     * Identifies a user int value as even or odd. All even, or all odd, values up to the user int value is added and printed to terminal
+     * @author Atticus Blanco
+     */
+    public static void eoCount() {
+        ArrayList<Integer> eoArray = new ArrayList<>();
+
         int eoSum = 0;
-        if (eoValue % 2 == 0) {
-            while (eoValue > 0) {
-                eoArray.add(eoValue);
-                eoValue -= 2;
+        System.out.println("Enter an integer value");
+        int userInt = Integer.parseInt(s.nextLine());
+
+        if (userInt % 2 == 0) {
+            while (userInt > 0) {
+                eoArray.add(userInt);
+                userInt -= 2;
             }
 
             for (int evenValue: eoArray) {
@@ -19,9 +27,9 @@ public class WhileLoops {
 
             System.out.println(eoSum);
         } else {
-            while (eoValue > 0) {
-                eoArray.add(eoValue);
-                eoValue -= 2;
+            while (userInt > 0) {
+                eoArray.add(userInt);
+                userInt -= 2;
             }
 
             for (int evenValue: eoArray) {
@@ -32,9 +40,13 @@ public class WhileLoops {
         }
     }
 
+    /**
+     * Populates an ArrayList with user int values, then prints mean value of all elements in the ArrayList
+     * @author Atticus Blanco
+     */
     public static void mean() {
         System.out.println("Enter values to calculate a mean.\nEnter \"Q\" to begin calculation.");
-        ArrayList<Integer> meanArray = new ArrayList();
+        ArrayList<Integer> meanArray = new ArrayList<>();
         double meanResult = 0;
         String userInput = s.nextLine();
 
@@ -53,13 +65,13 @@ public class WhileLoops {
 
     }
 
+    /**
+     * Initiates eoCount method and mean method
+     * @author Atticus Blanco
+     */
     public static void main(String[] args) {
 
-        System.out.println("Enter an integer value");
-        int userInt = Integer.parseInt(s.nextLine());
-
-
-        eoCount(userInt);
+        eoCount();
         mean();
     }
 }

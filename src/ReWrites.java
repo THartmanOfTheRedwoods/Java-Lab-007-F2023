@@ -3,6 +3,10 @@ import java.util.Scanner;
 class ReWrites {
     private final static Scanner s = new Scanner(System.in);
 
+    /**
+     * Takes user int values, calculates the mean of the user int values, and prints mean to terminal
+     * @author Atticus Blanco
+     */
     public static void avgRewrite() {
         String l;
         double sum = 0.0;
@@ -21,6 +25,11 @@ class ReWrites {
 
         System.out.printf("Average is: %f%n", (sum/count));
     }
+
+    /**
+     * Takes user int values, adds all user int values, then prints sum to terminal
+     * @author Atticus Blanco
+     */
     public static void sumRewrite() {
         Scanner in = new Scanner(System.in);
         System.out.println("Type positive integers to sum. To stop, type 0...");
@@ -36,6 +45,10 @@ class ReWrites {
         System.out.printf("Sum: %d%nGood Bye%n", sum);
     }
 
+    /**
+     * Initiates avgRewrite method and sumRewrite method
+     * @author Atticus Blanco
+     */
     public static void main(String[] args) {
         avgRewrite();
         sumRewrite();
