@@ -7,7 +7,7 @@ class ReWrites {
         String l;
         double sum = 0.0;
         int count = 0;
-        System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
+        System.out.println("This program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
         while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
             try {
                 sum += Integer.parseInt(l);
@@ -20,15 +20,10 @@ class ReWrites {
     public static void sumRewrite() {
         Scanner in = new Scanner(System.in);
         System.out.println("Type positive integers to sum. To stop, type 0...");
-        int x = -1;
         int sum = 0;
 
-        while (true) {
+        for (int x = -1; x !=0; x = Integer.parseInt(in.nextLine())) {
             try {
-                if(x == 0) {
-                    break;
-                }
-                x = Integer.parseInt(in.nextLine());
                 if (x <= 0) {
                     continue;
                 }
