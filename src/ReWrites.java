@@ -3,7 +3,7 @@ import java.util.Scanner;
 class ReWrites {
     private final static Scanner s = new Scanner(System.in);
 
-    public static void avgRewrite() {
+    public static void avgRewrite() { // it looks like this was already written without the break statement and without the boolean true in parenthesis so not sure what im supposed to do here
         String l;
         double sum = 0.0;
         int count = 0;
@@ -20,13 +20,12 @@ class ReWrites {
     public static void sumRewrite() {
         Scanner in = new Scanner(System.in);
         System.out.println("Type positive integers to sum. To stop, type 0...");
-        int x = -1;
         int sum = 0;
 
-        while (true) {
+        for (int x = -1; x != 0; x = Integer.parseInt(in.nextLine())) {
             try {
-                if(x == 0) {
-                    break;
+                if(x <= 0) {
+                    continue;
                 }
                 x = Integer.parseInt(in.nextLine());
                 if (x <= 0) {
@@ -34,7 +33,9 @@ class ReWrites {
                 }
                 System.out.println("Adding " + x);
                 sum += x;
-            } catch (NumberFormatException nfe) {}
+            } catch (NumberFormatException nfe) {
+                throw new RuntimeException(nfe);
+            }
         }
 
         System.out.printf("Sum: %d%nGood Bye%n", sum);
