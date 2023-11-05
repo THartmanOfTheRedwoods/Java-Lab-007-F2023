@@ -15,6 +15,7 @@ class ReWrites {
             } catch (NumberFormatException nfe) {}
         }
 
+
         System.out.printf("Average is: %f%n", (sum/count));
     }
     public static void sumRewrite() {
@@ -23,10 +24,10 @@ class ReWrites {
         int x = -1;
         int sum = 0;
 
-        while (true) {
+        while (x < 0) {
             try {
                 if(x == 0) {
-                    break;
+
                 }
                 x = Integer.parseInt(in.nextLine());
                 if (x <= 0) {
