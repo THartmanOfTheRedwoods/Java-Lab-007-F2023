@@ -7,28 +7,30 @@ class ReWrites {
         String l;
         double sum = 0.0;
         int count = 0;
-        System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+        System.out.println("This program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
+        for (; !(l = s.nextLine()).toUpperCase().equals("Q"); count++) {
             try {
                 sum += Integer.parseInt(l);
-                count++;
             } catch (NumberFormatException nfe) {}
         }
 
-        System.out.printf("Average is: %f%n", (sum/count));
+        if (count > 0) {
+            double average = sum / count;
+            System.out.printf("Average is: %.2f%n", average);
+        } else {
+            System.out.println("No valid numbers entered.");
+        }
+
+        s.close();
     }
     public static void sumRewrite() {
-        Scanner in = new Scanner(System.in);
         System.out.println("Type positive integers to sum. To stop, type 0...");
         int x = -1;
         int sum = 0;
 
-        while (true) {
+        while (x != 0) {
             try {
-                if(x == 0) {
-                    break;
-                }
-                x = Integer.parseInt(in.nextLine());
+                x = Integer.parseInt(s.nextLine());
                 if (x <= 0) {
                     continue;
                 }
@@ -41,7 +43,7 @@ class ReWrites {
     }
 
     public static void main(String[] args) {
-        avgRewrite();
         sumRewrite();
+        avgRewrite();
     }
 }
