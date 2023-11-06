@@ -1,3 +1,12 @@
+/**
+ *
+ * @author Trevor Hartman
+ * @author Cassandra Portlock
+ *
+ * @since Version 1
+ *
+ */
+
 import java.util.Scanner;
 
 class ReWrites {
@@ -8,7 +17,8 @@ class ReWrites {
         double sum = 0.0;
         int count = 0;
         System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+
+        for (l = s.nextLine(); !(l.toUpperCase().equals("Q")); l = s.nextLine()){
             try {
                 sum += Integer.parseInt(l);
                 count++;
@@ -19,23 +29,20 @@ class ReWrites {
     }
     public static void sumRewrite() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Type positive integers to sum. To stop, type 0...");
-        int x = -1;
+        boolean okay = true;
         int sum = 0;
 
-        while (true) {
-            try {
-                if(x == 0) {
-                    break;
-                }
-                x = Integer.parseInt(in.nextLine());
-                if (x <= 0) {
-                    continue;
-                }
-                System.out.println("Adding " + x);
+        System.out.println("Type positive integers to sum. To stop, type 0...");
+
+        do {
+            int x = Integer.parseInt(in.nextLine());
+            if (x > 0) {
                 sum += x;
-            } catch (NumberFormatException nfe) {}
-        }
+                System.out.println("Adding " + x);
+            } else if (x == 0) {
+                okay = false;
+            }
+        } while (okay);
 
         System.out.printf("Sum: %d%nGood Bye%n", sum);
     }
