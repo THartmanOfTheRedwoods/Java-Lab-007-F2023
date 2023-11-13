@@ -14,7 +14,6 @@ class ReWrites {
                 count++;
             } catch (NumberFormatException nfe) {}
         }
-
         System.out.printf("Average is: %f%n", (sum/count));
     }
     public static void sumRewrite() {
