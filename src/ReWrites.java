@@ -1,3 +1,11 @@
+/**
+ *
+ * @author Trevor Hartman
+ * @author Cameron Meng
+ *
+ * @since Version 1.0
+ *
+ */
 import java.util.Scanner;
 
 class ReWrites {
@@ -18,28 +26,32 @@ class ReWrites {
         System.out.printf("Average is: %f%n", (sum/count));
     }
     public static void sumRewrite() {
-        Scanner in = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(System.in);
         System.out.println("Type positive integers to sum. To stop, type 0...");
-        int x = -1;
+
+        int num = -1;
         int sum = 0;
 
-        while (true) {
+        for (; ; ) {
             try {
-                if(x == 0) {
+                num = Integer.parseInt(inputScanner.nextLine());
+
+                if (num > 0) {
+                    System.out.println("Adding " + num);
+                    sum += num;
+                } else if (num == 0) {
                     break;
+                } else {
+                    System.out.println("Please enter a positive integer or 0 to stop.");
                 }
-                x = Integer.parseInt(in.nextLine());
-                if (x <= 0) {
-                    continue;
-                }
-                System.out.println("Adding " + x);
-                sum += x;
-            } catch (NumberFormatException nfe) {}
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number or 0 to stop.");
+            }
         }
 
-        System.out.printf("Sum: %d%nGood Bye%n", sum);
+        System.out.printf("Sum: %d%nGoodbye%n", sum);
+        inputScanner.close();
     }
-
     public static void main(String[] args) {
         avgRewrite();
         sumRewrite();
